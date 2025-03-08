@@ -1,26 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- 首页 -->
   <url>
-    <loc><%= config.siteUrl %>/</loc>
-    <lastmod>2024-03-21</lastmod>
+    <loc>https://dcyyd.github.io/vue/</loc>
+    <lastmod>2025-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+  <!-- 项目页面 -->
   <url>
-    <loc><%= config.siteUrl %>/blog</loc>
-    <lastmod>2024-03-21</lastmod>
+    <loc>https://dcyyd.github.io/vue/projects</loc>
+    <lastmod>2025-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+  <!-- 技能栈页面 -->
   <url>
-    <loc><%= config.siteUrl %>/skills</loc>
-    <lastmod>2024-03-21</lastmod>
+    <loc>https://dcyyd.github.io/vue/skills</loc>
+    <lastmod>2025-03-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <!-- 联系我页面 -->
   <url>
-    <loc><%= config.siteUrl %>/contact</loc>
-    <lastmod>2024-03-21</lastmod>
+    <loc>https://dcyyd.github.io/vue/contact</loc>
+    <lastmod>2025-03-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
