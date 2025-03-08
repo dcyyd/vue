@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Not Found</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        /* 定义浅色主题变量 */
+        :root.light-theme {
+            --background-color: #ffffff;
+            --text-color: #000000;
+            --button-bg-color: #007bff;
+            --button-hover-bg-color: #0056b3;
+            --button-shadow: rgba(0, 123, 255, 0.3);
+            --button-text-color: #ffffff;
+        }
+
+        /* 定义深色主题变量 */
+        :root.dark-theme {
+            --background-color: #000000;
+            --text-color: #ffffff;
+            --button-bg-color: #007bff;
+            --button-hover-bg-color: #0056b3;
+            --button-shadow: rgba(0, 123, 255, 0.5);
+            --button-text-color: #ffffff;
+        }
+
+        .not-found-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 80vh;
+            text-align: center;
+            background-color: var(--background-color);
+            /* 使用变量设置背景色 */
+            color: var(--text-color);
+            /* 使用变量设置字体颜色 */
+        }
+
+        .animated-icon {
+            color: #ffc107;
+            /* 图标颜色 */
+            margin-bottom: 20px;
+            /* 图标与标题之间的间距 */
+            animation: spin 2s linear infinite;
+            /* 添加旋转动画 */
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .animated-text {
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out forwards;
+            /* 添加淡入动画 */
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .back-home-button {
+            position: relative;
+            background-color: var(--button-bg-color);
+            color: var(--button-text-color);
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 6px var(--button-shadow);
+            transition: all 0.3s ease;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .back-home-button::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
+            transform: translateY(-100%);
+            transition: transform 0.3s ease;
+            z-index: -1;
+        }
+
+        .back-home-button:hover {
+            background-color: var(--button-hover-bg-color);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px var(--button-shadow);
+        }
+
+        .back-home-button:hover::before {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body class="light-theme">
+    <div class="not-found-container">
+        <!-- 添加图标 -->
+        <i class="fa-solid fa-exclamation-triangle fa-5x animated-icon"></i>
+        <h1 class="animated-text">404 Not found</h1>
+        <p class="animated-text">The page you visited does not exist.</p>
+        <!-- 可以添加返回主页的按钮 -->
+        <a href="https://dcyyd.github.io/vue/" class="back-home-button animated-button">Back to home page</a>
+    </div>
+    <script>
+        // 模拟主题切换
+        const toggleTheme = () => {
+            const root = document.documentElement;
+            if (root.classList.contains('light-theme')) {
+                root.classList.remove('light-theme');
+                root.classList.add('dark-theme');
+            } else {
+                root.classList.remove('dark-theme');
+                root.classList.add('light-theme');
+            }
+        };
+
+        // 可以添加一个按钮来触发主题切换
+        const themeToggleButton = document.createElement('button');
+        themeToggleButton.textContent = 'Toggle Theme';
+        themeToggleButton.addEventListener('click', toggleTheme);
+        document.body.appendChild(themeToggleButton);
+    </script>
+</body>
+
+</html>
