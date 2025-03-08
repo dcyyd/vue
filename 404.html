@@ -9,7 +9,7 @@
     <style>
         /* 定义浅色主题变量 */
         :root.light-theme {
-            --background-color: #ffffff;
+            --background-color:#111827;
             --text-color: #000000;
             --button-bg-color: #007bff;
             --button-hover-bg-color: #0056b3;
@@ -19,7 +19,7 @@
 
         /* 定义深色主题变量 */
         :root.dark-theme {
-            --background-color: #000000;
+            --background-color: #111827;
             --text-color: #ffffff;
             --button-bg-color: #007bff;
             --button-hover-bg-color: #0056b3;
@@ -136,25 +136,6 @@
         <!-- 可以添加返回主页的按钮 -->
         <a href="https://dcyyd.github.io/vue/" class="back-home-button animated-button">Back to home page</a>
     </div>
-    <script>
-        // 模拟主题切换
-        const toggleTheme = () => {
-            const root = document.documentElement;
-            if (root.classList.contains('light-theme')) {
-                root.classList.remove('light-theme');
-                root.classList.add('dark-theme');
-            } else {
-                root.classList.remove('dark-theme');
-                root.classList.add('light-theme');
-            }
-        };
-
-        // 可以添加一个按钮来触发主题切换
-        const themeToggleButton = document.createElement('button');
-        themeToggleButton.textContent = 'Toggle Theme';
-        themeToggleButton.addEventListener('click', toggleTheme);
-        document.body.appendChild(themeToggleButton);
-    </script>
 </body>
 
 </html>
